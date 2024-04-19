@@ -1,21 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
 .SearchBar {
   padding-left: 15px;
   height: 100%;
   width: 35vw;
   stroke: #121212;
   background-color: white;
-  border-radius: 8px;
-  padding: 9px 20px;
+  border-radius: 8px 0px 0px 8px;
+  box-sizing: border-box;
 }
 
 .SearchButton {
+  padding: 14px 20px;
+  cursor: pointer;
+  border-radius: 0px 8px 8px 0px;
+  border-left: none;
+  border: 1px solid #121212;
   height: 100%;
-  border-radius: 8px;
-  padding: 9px 20px;
-  stroke: #121212;
-}
-
-.container {
-  display: flex;
-  align-items: center;
 }

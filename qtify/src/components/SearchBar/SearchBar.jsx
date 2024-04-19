@@ -4,16 +4,16 @@ import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
 
 function Search() {
   return (
-    <div className={Styles.container}>
+    <form className={Styles.container}>
       <input
         name="search"
         className={Styles.SearchBar}
         placeholder="Search a album of your choice"
       />
-      <button className={Styles.SearchButton}>
+      <button className={Styles.SearchButton} type="submit">
         <SearchIcon />
       </button>
-    </div>
+    </form>
   );
 }
 

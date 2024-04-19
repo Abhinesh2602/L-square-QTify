@@ -3,4 +3,6 @@
   padding: 10px 15px;
   background-color: #121212;
   color: #34c94b;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }

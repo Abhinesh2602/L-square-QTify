@@ -1,11 +1,17 @@
 import axios from "axios";
 
-async function getData() {
+const albumsEndpoint = "https://qtify-backend-labs.crio.do/albums/top";
+const newAlbumsEndpoint = "https://qtify-backend-labs.crio.do/albums/new";
+
+async function getData(type) {
   try {
-    const response = await axios.get(
-      "https://qtify-backend-labs.crio.do/albums/top"
-    );
-    return response;
+    if (type === "album") {
+      const response = await axios.get(albumsEndpoint);
+      return response.data;
+    } else if (type === "newAlbums") {
+      const response = await axios.get(newAlbumsEndpoint);
+      return response.data;
+    }
   } catch (error) {
     console.log(error);
   }

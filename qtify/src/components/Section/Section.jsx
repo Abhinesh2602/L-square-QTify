@@ -4,13 +4,14 @@ import Button from "../Button/Button";
 import getData from "../../Services/getData";
 import Card from "../Card/Card";
 
-function Section() {
+function Section({ title, type }) {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     const loadData = async () => {
       try {
-        const fetchedData = await getData();
-        setData(fetchedData.data);
+        const fetchedData = await getData(type);
+        setData(fetchedData);
       } catch (erorr) {
         console.log(erorr);
       }
@@ -21,14 +22,15 @@ function Section() {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <span className={styles.titles}>Top Albums</span>
+        <span className={styles.titles}>{title}</span>
         <Button variant="grid">Show all</Button>
       </div>
       <div className={styles.cardGrid}>
         {data.map((item) => (
-          <Card data={item} type={"album"} key={item.id} />
+          <Card data={item} type={type} key={item.id} />
         ))}
       </div>
+      <div className={styles.line}></div>
     </div>
   );
 }

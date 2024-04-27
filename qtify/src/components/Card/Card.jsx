@@ -4,7 +4,7 @@ import styles from "./Card.module.css";
 import { Chip } from "@mui/material";
 
 function Card({ data, type }) {
-  if (type === "album") {
+  if (type === "album" || type === "newAlbums") {
     const { id, title, description, songs, follows, image, slug } = data;
 
     return (

@@ -13,8 +13,8 @@ function App() {
       <div className={styles.background}>
         <Navbar />
         <Hero />
-        {/* <Card data={data} type={"album"} /> */}
-        <Section />
+        <Section title={"Top Albums"} type={"album"} />
+        <Section title={"New Albums"} type={"newAlbums"} />
       </div>
     </StyledEngineProvider>
   );

@@ -12,13 +12,15 @@
   flex-direction: column;
   align-content: center;
   margin: 0 32px;
+  row-gap: 40px;
+  margin-top: 10px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .cardGrid {
@@ -30,4 +32,10 @@
   grid-template-areas: "item item item item item item item";
   column-gap: 40px;
   row-gap: 32px;
+}
+
+.line {
+  width: 1440px;
+  height: 1px;
+  background: #34c94b;
 }

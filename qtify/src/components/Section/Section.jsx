@@ -3,9 +3,11 @@ import styles from "./Section.module.css";
 import Button from "../Button/Button";
 import getData from "../../Services/getData";
 import Card from "../Card/Card";
+import { Carousal } from "../Carousal/Carousal";
 
 function Section({ title, type }) {
   const [data, setData] = useState([]);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -23,13 +25,29 @@ function Section({ title, type }) {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <span className={styles.titles}>{title}</span>
-        <Button variant="grid">Show all</Button>
+        <Button
+          variant="grid"
+          onClick={(e) => setToggle((prevToggle) => !prevToggle)}
+        >
+          {toggle ? "Collapse All" : "Show all"}
+        </Button>
       </div>
-      <div className={styles.cardGrid}>
-        {data.map((item) => (
-          <Card data={item} type={type} key={item.id} />
-        ))}
-      </div>
+      {toggle ? (
+        <>
+          <div className={styles.cardGrid}>
+            {data.map((item) => (
+              <Card data={item} type={type} key={item.id} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <>
+          <Carousal
+            data={data}
+            renderCardComponent={(data) => <Card data={data} type={type} />}
+          />
+        </>
+      )}
       <div className={styles.line}></div>
     </div>
   );

@@ -19,7 +19,7 @@
   align-items: flex-start;
   position: relative;
   overflow: hidden;
-  background-size: contain;
+  background-size: cover;
 }
 
 .cardImage {

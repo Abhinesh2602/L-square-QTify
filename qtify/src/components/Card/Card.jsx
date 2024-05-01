@@ -24,18 +24,23 @@ function Card({ data, type }) {
         </div>
       </Tooltip>
     );
-  } else {
+  } else if (type === "songs") {
+    const { id, title, likes, image, slug } = data;
+
     return (
-      <>
-        <h4>{data.title}</h4>
-        <p>{data.artists}</p>
-        <p>
-          <strong>Genre:</strong> {data.genre.label}
-        </p>
-        <p>
-          <strong>Likes:</strong> {data.likes}
-        </p>
-      </>
+      <div className={styles.cardWrapper}>
+        <div className={styles.cardBox}>
+          <img className={styles.cardImage} src={image} alt={title} />
+          <div className={styles.banner}>
+            <Chip
+              label={`${likes} Likes`}
+              className={styles.chip}
+              size="small"
+            />
+          </div>
+        </div>
+        <span className={styles.title}>{title}</span>
+      </div>
     );
   }
 }

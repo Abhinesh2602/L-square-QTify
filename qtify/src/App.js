@@ -15,6 +15,7 @@ function App() {
         <Hero />
         <Section title={"Top Albums"} type={"album"} />
         <Section title={"New Albums"} type={"newAlbums"} />
+        <Section title={"Songs"} type={"songs"} />
       </div>
     </StyledEngineProvider>
   );
